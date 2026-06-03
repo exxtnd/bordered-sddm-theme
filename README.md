@@ -15,7 +15,7 @@ Black&White minimalistic SDDM theme based on Qt5.
 <img width="1366" height="768" alt="Screenshot_2026-06-03-04-21-48" src="https://github.com/user-attachments/assets/56f3860a-b650-4714-96dc-c95a1d36d5ac" />
 
 
-> The font, used in this theme: [Audiowide font from Google Fonts](https://fonts.google.com/specimen/Audiowide?preview.script=Latn)
+> The font used in this theme: [Audiowide font from Google Fonts](https://fonts.google.com/specimen/Audiowide?preview.script=Latn)
 
 ## Installation
 ```
