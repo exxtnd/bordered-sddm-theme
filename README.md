@@ -19,9 +19,9 @@ Black&White minimalistic SDDM theme based on Qt5.
 
 ## Installation
 ```
-git clone https://github.com/exxtnd/
+git clone https://github.com/exxtnd/bordered-sddm-theme ./border
 
-cd 
+cd border
 
 sudo cp -r bordered /usr/share/sddm/themes/ 
 ```
@@ -32,5 +32,5 @@ sudo cp -r bordered /usr/share/sddm/themes/
 [Theme]
 Current=bordered 
 ```
-----
+---
 Please report me in «issues» if you’ll see some bugs
