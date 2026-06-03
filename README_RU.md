@@ -18,16 +18,16 @@
 
 ## Установка
 ```
-git clone https://github.com/exxtnd/
+git clone https://github.com/exxtnd/bordered-sddm-theme ./border
 
-cd 
+cd border
 
 sudo cp -r bordered /usr/share/sddm/themes/ 
 ```
 ```
 # для применения темы, нужно вручную отредактировать /etc/sddm.conf и /etc/sddm.conf.d/sddm.conf
 # если отсутствуют - создайте.
-# Впишите в графу "[Theme]" или (если файлы пустые) вставьте:
+# Впишите в графу "[Theme]" название директории темы, или (если файлы пустые) вставьте полностью этот блок:
 
 [Theme]
 Current=bordered 
