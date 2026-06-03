@@ -9,8 +9,6 @@ Rectangle {
     width: 1920
     height: 1080
     color: "black"
-
-    // --- ТВОИ НАСТРОЙКИ ---
     property int pad: 12
     property int rad: 25
     property int nWidth: 260
@@ -19,10 +17,7 @@ Rectangle {
     property int bWidth: 55
     property int bHeight: 200
     property string fontFamily: audiowide.name
-
     FontLoader { id: audiowide; source: "assets/Audiowide-Regular.ttf" }
-
-    // Переменная для хранения выбранного пользователя (индекс)
     property int selectedUserIndex: userModel.lastIndex
     property int selectedSessionIndex: sessionModel.lastIndex
     function handlePowerAction(action) {
@@ -31,23 +26,17 @@ Rectangle {
         else if (action === "reboot") { sddm.reboot(); }
         else if (action === "power") { sddm.powerOff(); }
     }
-
-    // 1. ОБОИ
     Item {
         id: bgContainer; anchors.fill: parent; z: 0
         Image { id: bgImage; anchors.fill: parent; source: "assets/bg.jpg"; fillMode: Image.PreserveAspectCrop; visible: false }
         FastBlur { anchors.fill: bgImage; source: bgImage; radius: 90; transparentBorder: false }
     }
-
-    // 2. ДЕТЕКТОР КЛИКА ВНЕ МЕНЮ
     MouseArea {
         anchors.fill: parent
         enabled: sessionMenu.visible || userMenu.visible
         z: 60 
         onClicked: { sessionMenu.visible = false; userMenu.visible = false; }
     }
-
-    // 3. ЕДИНАЯ МАСКА (Рамка + Нотчи)
     Canvas {
         id: mainMask
         anchors.fill: parent; z: 5
@@ -73,16 +62,12 @@ Rectangle {
             ctx.closePath(); ctx.fillRule = Qt.OddEvenFill; ctx.fill();
         }
     }
-
-    // 4. ЧАСЫ И ДАТА
     Column {
         anchors.top: parent.top; anchors.topMargin: parent.height * -0.04
         anchors.horizontalCenter: parent.horizontalCenter; z: 10; spacing: -45 
         Text { id: timeText; color: "black"; font.family: root.fontFamily; font.pixelSize: 330; text: Qt.formatDateTime(new Date(), "HH:mm") }
         Text { id: dateText; anchors.horizontalCenter: parent.horizontalCenter; color: "black"; font.family: root.fontFamily; font.pixelSize: 24; text: Qt.formatDateTime(new Date(), "dddd, d MMMM") }
     }
-
-    // 5. КНОПКИ ПИТАНИЯ
     Column {
         id: powerBlock
         anchors.top: parent.top; anchors.right: parent.right; anchors.topMargin: root.pad + 18
@@ -98,8 +83,6 @@ Rectangle {
             }
         }
     }
-
-    // 6. МЕНЮ ВЫБОРА СЕССИИ (С твоими правками -8)
     Rectangle {
         id: sessionMenu
         visible: false
@@ -107,8 +90,6 @@ Rectangle {
         anchors.right: parent.right; anchors.rightMargin: root.pad + root.bWidth - 9
         width: 180; height: Math.max(45, Math.min(sessionList.count * 40 + 14, 174))
         color: "black"; radius: 12; border.color: "#ff000000"; z: 110
-//        width: Math.min(sessionList.count * 130 + 14, 800)
-//        height: 54
         ListView {
             id: sessionList; anchors.fill: parent; anchors.margins: 7; model: sessionModel; clip: true; currentIndex: sessionModel.lastIndex
             delegate: ItemDelegate {
@@ -119,16 +100,14 @@ Rectangle {
             }
         }
     }
-
-    // 7. МЕНЮ ВЫБОРА ПОЛЬЗОВАТЕЛЯ (Над нотчем)
     Rectangle {
         id: userMenu
         visible: false
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: root.pad + root.nHeight + 5 // Над нотчем
+        anchors.bottomMargin: root.pad + root.nHeight + 5
         anchors.horizontalCenter: parent.horizontalCenter
         width: root.nWidth
-        height: Math.min(Math.ceil(userList.count / 2) * 50 + 14, 214) // 2 в ширину, до 4 в высоту
+        height: Math.min(Math.ceil(userList.count / 2) * 50 + 14, 214)
         color: "black"; radius: 12; border.color: "#ff000000"; z: 110
 
         GridView {
@@ -161,14 +140,10 @@ Rectangle {
             }
         }
     }
-
-    // 8. БЛОК ВХОДА (Нотч)
     RowLayout {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom; anchors.bottomMargin: root.pad + (root.nHeight - 48) / 2
         z: 15; spacing: 15
-
-        // АВАТАРКА-КНОПКА
         Item {
             width: 45; height: 45
             MouseArea {
@@ -178,19 +153,15 @@ Rectangle {
             }
             Image { 
                 id: avatar; anchors.fill: parent
-                // Берем иконку выбранного в меню пользователя
                 source: userModel.data(userModel.index(root.selectedUserIndex, 0), Qt.UserRole + 2) || "assets/avatar.png"
                 fillMode: Image.PreserveAspectCrop; visible: false 
             }
-            // ShaderEffect { anchors.fill: parent; property variant source: avatar; fragmentShader: "varying highp vec2 qt_TexCoord0; uniform sampler2D source; void main() { highp vec2 dist = qt_TexCoord0 - vec2(0.5); highp float mask = smoothstep(0.5, 0.48, length(dist)); gl_FragColor = texture2D(source, qt_TexCoord0) * mask; }" }
             Rectangle {
                 id: maskRect
                 anchors.fill: parent
-                radius: 10 // СТАВЬ ТАКОЕ ЖЕ СКРУГЛЕНИЕ, КАК У РАМКИ
+                radius: 10
                 visible: false
             }
-
-            // 3. Эффект обрезки
             OpacityMask {
                 anchors.fill: parent
                 source: avatar
@@ -201,14 +172,13 @@ Rectangle {
         }
 
         TextField {
-            id: passwordField;cursorVisible: false; focus: true; echoMode: TextInput.Password; placeholderText: "ENTER PASSWD"; font.family: root.fontFamily; font.pixelSize: 16; color: "white"
+            id: passwordField; focus: true; echoMode: TextInput.Password; placeholderText: "ENTER PASSWD"; font.family: root.fontFamily; font.pixelSize: 16; color: "white"
             onActiveFocusChanged: {
                 if (!activeFocus) passwordField.forceActiveFocus()
             }
             Layout.preferredWidth: 175; Layout.preferredHeight: 45; verticalAlignment: TextInput.AlignVCenter; leftPadding: 10
             background: Rectangle { color: Qt.rgba(0, 0, 0, 1); radius: 8; border.color: parent.activeFocus ? "#22ffffff" : "#11ffffff" }
             onAccepted: {
-                // Логин под выбранным пользователем
                 var username = userModel.data(userModel.index(root.selectedUserIndex, 0), Qt.UserRole + 1)
                 sddm.login(username, text, sessionList.currentIndex)
             }
