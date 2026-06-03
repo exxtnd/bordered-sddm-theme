@@ -1,7 +1,7 @@
 # Bordered [Qt5 SDDM Theme] 
 >THIS PROJECT IS IN DEVELOPMENT NOW | ПРОЕКТ В СТАДИИ ДОРАБОТКИ
 
-[README_RU.md](---)
+[README_RU_VER](https://github.com/exxtnd/bordered-sddm-theme/blob/main/README_RU.md)
 
 Black&White minimalistic SDDM theme based on Qt5.
 
