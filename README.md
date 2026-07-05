@@ -1,9 +1,13 @@
-# Bordered [Qt5 SDDM Theme] 
+<h1 align="center"> Bordered [Qt5 SDDM Theme] </h1>
+
+> [!IMPORTANT]
 >THIS PROJECT IS IN DEVELOPMENT NOW | ПРОЕКТ В СТАДИИ ДОРАБОТКИ
 
-[README_RU_VER](https://github.com/exxtnd/bordered-sddm-theme/blob/main/README_RU.md)
-
-Black&White minimalistic SDDM theme based on Qt5.
+<p align="center">
+  <font size="6">
+    <a href="https://github.com/exxtnd/bordered-sddm-theme/blob/main/README_RU.md">RU version of README</a>
+  </font>
+</p>
 
 ## Features
 * Without unnecessary dependencies of KDE 
@@ -15,7 +19,8 @@ Black&White minimalistic SDDM theme based on Qt5.
 <img width="1366" height="768" alt="Screenshot_2026-06-03-04-21-48" src="https://github.com/user-attachments/assets/56f3860a-b650-4714-96dc-c95a1d36d5ac" />
 
 
-> The font used in this theme: [Audiowide font from Google Fonts](https://fonts.google.com/specimen/Audiowide?preview.script=Latn)
+> [!NOTE]
+>  The font used in this theme: [Audiowide font from Google Fonts](https://fonts.google.com/specimen/Audiowide?preview.script=Latn)
 
 ## Installation
 ```
