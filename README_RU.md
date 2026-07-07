@@ -1,9 +1,24 @@
-# Bordered [Qt5 SDDM Theme] 
->THIS PROJECT IS IN DEVELOPMENT NOW | ПРОЕКТ В СТАДИИ ДОРАБОТКИ
+<div align="center">
 
-[README_EN_VER](https://github.com/exxtnd/bordered-sddm-theme/blob/main/README.md)
+<br>
+<h3> Bordered [Qt5 SDDM Theme] </h3>
 
-Ч/Б минималистичная тема для SDDM (Qt5).
+<img width="1366" height="768" alt="Screenshot_2026-06-03-04-21-48" src="https://github.com/user-attachments/assets/56f3860a-b650-4714-96dc-c95a1d36d5ac" />
+
+<h6> Mинималистичная черно-белая тема для SDDM, бфзирующаяся на Qt5 и не привязанная к модулям окружения KDE </h6>
+
+[![License](https://img.shields.io/github/license/igmunv/cremniy?color=orange&style=flat-square)](LICENSE)
+<br>
+[![Qt 5](https://img.shields.io/badge/Qt-5.15.16-41CD52?style=flat-square&logo=qt)](https://qt.io)
+[![DE-Agnostic](https://img.shields.io/badge/DE--Agnostic-Pure_Qt-8A2BE2?style=flat-square&logo=linux)](https://github.com)
+[![Dependencies](https://img.shields.io/badge/KDE_Deps-None_/_Lightweight-ff69b4?style=flat-square&logo=speedtest)]()
+[![Font](https://shields.io/badge/Font-Audiowide-ff5252?style=flat-square&logo=googlefonts&logoColor=white)](https://fonts://)
+
+[English](https://github.com/exxtnd/bordered-sddm-theme/blob/main/README.md)• Русский
+
+</div>
+
+<br>
 
 ## Особенности
 * Без привязки к модулям окружения KDE
@@ -11,10 +26,8 @@
 * Доступ к смене сессии имеется
 * Другой базовый функционал
 
-## Превью
-<img width="1366" height="768" alt="Screenshot_2026-06-03-04-21-48" src="https://github.com/user-attachments/assets/be9c607c-595d-4323-8fc4-f3efcd3e1388" />
-
->Используемый в теме шрифт уже помещен в ее папку. Тем не менее, ссылка на шрифт, откуда брал: [Шрифт Audiowide с Google Fonts](https://fonts.google.com/specimen/Audiowide?preview.script=Latn)
+> [!NOTE]
+> Шрифт, использующийся в теме: [Шрифт Audiowide с Google Fonts](https://fonts.google.com/specimen/Audiowide?preview.script=Latn)
 
 ## Установка
 ```
@@ -32,5 +45,13 @@ sudo cp -r bordered /usr/share/sddm/themes/
 [Theme]
 Current=bordered 
 ```
-----
-Пожалуйста, пишите в "Issues" если увидите баги
+
+## Участие в разработке
+
+Вклад в проект **приветствуется**.
+
+Будь то исправление ошибок, новая функциональность или улучшение документации — открывайте issue или отправляйте pull request.
+
+## Лицензия
+
+Распространяется на условиях, описанных в [LICENSE](LICENSE).
