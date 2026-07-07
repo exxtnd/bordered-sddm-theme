@@ -5,7 +5,7 @@
 
 <img width="1366" height="768" alt="Screenshot_2026-06-03-04-21-48" src="https://github.com/user-attachments/assets/56f3860a-b650-4714-96dc-c95a1d36d5ac" />
 
-<h6> Mинималистичная черно-белая тема для SDDM, бфзирующаяся на Qt5 и не привязанная к модулям окружения KDE </h6>
+<h6> Mинималистичная черно-белая тема для SDDM, базирующаяся на Qt5 и не привязанная к модулям окружения KDE </h6>
 
 [![License](https://img.shields.io/github/license/igmunv/cremniy?color=orange&style=flat-square)](LICENSE)
 <br>
